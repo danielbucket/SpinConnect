@@ -12,7 +12,7 @@ const userStub = {
 	userToken: 'password123',
 }
 
-export default function SpinConnect() {
+export default function App() {
 	const [loginStatus, setLoginStatus] = useState(true)
 	const [userPackage, setUserPackage] = useState(null)
 
