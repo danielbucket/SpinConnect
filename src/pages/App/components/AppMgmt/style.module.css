@@ -1,10 +1,10 @@
-.app-mgmt-container {
+.appMgmtContainer {
 	grid-row: AppMgmt;
 	display: flex;
 	background-color: #7c7b7b;
 }
 
-.mgmt-operations-container {
+.mgmtOperationsContainer {
 	display: flex;
 	flex-direction: column;
 	width: 40rem;
@@ -12,17 +12,17 @@
 	background-color: slategray;
 }
 
-.mgmt-operations-container h1 {
+.mgmtOperationsContainer h1 {
 	height: 8rem;
 	background-color: lightslategray;
 }
 
-.mgmt-controls {
+.mgmtControls {
 	flex-grow: 1;
 	background-color: steelblue;
 }
 
-.results-container {
+.resultsContainer {
 	flex-grow: 1;
 	background-color: blue;
 }

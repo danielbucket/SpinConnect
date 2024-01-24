@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import style from './index.style.css'
+import style from './style.module.css'
 
 import { fetchCollection } from './appMgmtHelpers'
 
@@ -29,14 +29,17 @@ export default function AppMgmt(props) {
 	}
 
 	return (
-		<div className='app-mgmt-container'>
-			<div className='mgmt-operations-container'>
+		<div className={style.appMgmtContainer}>
+		
+			<div className={style.mgmtOperationsContainer}>
 				<h1>App Management</h1>
-				<div className='mgmt-controls'>Controls</div>
+				<div className={style.mgmtControls}>Controls</div>
 			</div>
-			<div className='results-container'>
+
+			<div className={style.resultsContainer}>
 				Results Container
 			</div>	
+
 		</div>
 	)
 }
