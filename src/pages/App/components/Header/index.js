@@ -8,8 +8,8 @@ export default function Header(props) {
 	const { userName } = loginPackage
 
 	return (
-		<div className='spinCollect-header-container'>
-			<div className='spinCollect-header-title'>1-800-SpinCollect</div>
+		<div className='spinConnect-header-container'>
+			<div className='spinConnect-header-title'>1-800-SpinConnect</div>
 				<div className='login-status-container'>
 					{
 						!loginStatus

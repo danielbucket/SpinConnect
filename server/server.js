@@ -12,12 +12,12 @@ const appRouter = require('./router')
 app.use(
 	webpackDevMiddleware(compiler, {
 		publicPath,
-		index: 'spinCollectApp.html',
+		index: 'spinConnectApp.html',
 	})
 )
 
 app.use('/api/v1', appRouter)
 
 app.listen(PORT, () => {
-	console.log(`SpinCollect Server is spinning on port: ${PORT}.`)
+	console.log(`SpinConnect Server is spinning on port: ${PORT}.`)
 })

@@ -17,7 +17,7 @@ module.exports = {
 	mode: mode,
 	devtool: devMode ? 'inline-source-map' : '',
 	entry: {
-		spinCollectApp: './src/spinConnect.js',
+		spinConnectApp: './src/spinConnect.js',
 		shared: ['react', 'react-dom'],
 	},
 	output: {
@@ -29,14 +29,14 @@ module.exports = {
 
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Spin Collect',
-			description: 'Unify your vinyl collection with other media streaming apps',
-			filename: 'spinCollectApp.html',
+			title: 'Spin Connect',
+			description: 'Unify your vinyl connection with other media streaming apps',
+			filename: 'spinConnectApp.html',
 			template: path.join(paths.TEMPLATES, '/app_template.hbs'),
 		}),
 		new Dotenv(),
 	].concat(devMode ? [] : [
-		new MiniCssExtractPlugin({ filename: 'spinCollect.style.css' })
+		new MiniCssExtractPlugin({ filename: 'spinConnect.style.css' })
 	]),
 	module: {
 		rules: [
@@ -77,20 +77,3 @@ module.exports = {
 		],
 	},
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

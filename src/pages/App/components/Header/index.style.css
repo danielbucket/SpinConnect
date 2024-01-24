@@ -1,11 +1,11 @@
-.spinCollect-header-container {
+.spinConnect-header-container {
 	grid-row: Header;
 	display: flex;
 	flex-direction: row;
 	background-color: darkgray;
 }
 
-.spinCollect-header-title {
+.spinConnect-header-title {
 	flex-grow: 1;
 	display: flex;
 	align-items: center;

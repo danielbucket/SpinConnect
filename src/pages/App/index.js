@@ -12,12 +12,12 @@ const userStub = {
 	userToken: 'password123',
 }
 
-export default function SpinCollect() {
+export default function SpinConnect() {
 	const [loginStatus, setLoginStatus] = useState(true)
 	const [userPackage, setUserPackage] = useState(null)
 
 	return (
-		<div className={style.spinCollectAppContainer}>
+		<div className={style.spinConnectAppContainer}>
 			<Header
 				logOutPackage={{setLoginStatus, setUserPackage}}
 				loginStatus={loginStatus}
