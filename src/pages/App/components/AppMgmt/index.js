@@ -32,14 +32,7 @@ export default function AppMgmt(props) {
 	return (
 		<div className={style.appMgmtContainer}>
 			<div className={style.mgmtOperationsContainer}>
-
-
-
-
-
-
 				<div className={style.appMgmt}>
-
 					<div className={style.mgmtPreview}>
 						<p>Management</p>
 						<div className={style.mgmtOptionsContainer}>
@@ -52,11 +45,7 @@ export default function AppMgmt(props) {
 						</div>
 					</div>
 				</div>
-
-
-
 				<div className={style.mgmtControls}>
-
 					<div className={style.mgmtPreview}>
 						<p>Controls</p>
 						<div className={style.mgmtOptionsContainer}>
@@ -68,14 +57,8 @@ export default function AppMgmt(props) {
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-
-
-
-
-
 			<div className={style.collectionContainer}>
 				<Collection
 					userPackage={userPackage}

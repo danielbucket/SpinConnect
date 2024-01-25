@@ -26,9 +26,6 @@ async function getDiscogs(userPackage) {
 	})
 }
 
-
-
-
 export const fetchCollection = userPackagege => {
 	if (!loggedIn) {
 		throw new Error('You are not logged in.')
