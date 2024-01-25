@@ -4,8 +4,8 @@ export function IsLoggedIn(props) {
 	const { userName, logOutPackage } = props
 
 	const handleClick = () => {
-		logOutPackage.setLoginStatus(false)
-		logOutPackage.setUserPackage(null)
+		// logOutPackage.setLoginStatus(false)
+		// logOutPackage.setUserPackage(null)
 	}
 
 	return (

@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import style from './root.style.css'
-
 import App from './pages/App'
 import LoginPortal from './pages/LoginPortal'
 import ErrorPage from './pages/error-page.js'
