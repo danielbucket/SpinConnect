@@ -1,23 +1,26 @@
-.spinConnectHeaderContainer {
+.headerContainer {
 	grid-row: Header;
-	
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
 	background-color: darkgray;
 }
 
-.spinConnectHeaderTitle {
+.headerTitle {
 	flex-grow: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 3.5rem;
+	font-family: Audiowide;
+	font-size: 2.5rem;
 }
 
 .loginStatusContainer {
-  width: 20rem;
+  width: 12rem;
   border-left: .16rem solid black;
   border-bottom: .16rem solid black;
+  font-family: Orbitron;
 }
 
 .isLoggedInContainer {

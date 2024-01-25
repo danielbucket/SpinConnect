@@ -9,15 +9,15 @@ export default function Header(props) {
 
 
 	return (
-		<div className={style.spinConnectHeaderContainer}>
-			<div className={style.spinConnectHeaderTitle}>1-800-SpinConnect</div>
-				<div className={style.loginStatusContainer}>
-					{
-						!loginStatus
-							? (<Link to={'/login'}></Link>)
-							: <IsLoggedIn userName={userName} logOutPackage={logOutPackage} />
-					}
-				</div>
+		<div className={style.headerContainer}>
+			<div className={style.headerTitle}>SpinConnect</div>
+			<div className={style.loginStatusContainer}>
+				{
+					!loginStatus
+						? (<Link to={'/login'}></Link>)
+						: <IsLoggedIn userName={userName} logOutPackage={logOutPackage} />
+				}
+			</div>
 		</div>
 	)
 }

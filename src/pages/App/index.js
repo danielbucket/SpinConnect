@@ -8,13 +8,13 @@ import AppManagement from './components/AppMgmt'
 import { loginRoute } from '../utils/constants'
 
 const userStub = {
-	userName: 'bucketLimited',
-	userToken: 'password123',
+	USER_NAME: 'bucketLimited',
+	USER_TOKEN: 'password123',
 }
 
 export default function App() {
 	const [loginStatus, setLoginStatus] = useState(true)
-	const [userPackage, setUserPackage] = useState(null)
+	const [userPackage, setUserPackage] = useState(userStub)
 
 	return (
 		<div style={{

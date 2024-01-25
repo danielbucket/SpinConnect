@@ -1,28 +1,85 @@
 .appMgmtContainer {
 	grid-row: AppMgmt;
 	display: flex;
+	flex-direction: column;
 	background-color: #7c7b7b;
+	font-family: Orbitron;
 }
 
 .mgmtOperationsContainer {
 	display: flex;
 	flex-direction: column;
-	width: 40rem;
-	height: 100%;
+	font-size: 2.5rem;
+	max-height: 13.5rem;
 	background-color: slategray;
 }
 
-.mgmtOperationsContainer h1 {
-	height: 8rem;
+.appMgmt {
+	display: flex;
+	flex-direction: column;
+
+	height: 3.5rem;
+	transition: height 0.75s;
 	background-color: lightslategray;
 }
 
-.mgmtControls {
-	flex-grow: 1;
-	background-color: steelblue;
+.appMgmt:hover  {
+	height: 10rem;
 }
 
-.resultsContainer {
+.mgmtPreview {
+	display: flex;
+	flex-direction: row;
+	height: 3.4rem%;
+}
+
+.mgmtPreview p {
+	display: flex;
+	align-items: center;
+	height: 3.5rem;
+	min-width: 16rem;
+	font-size: 2rem;
+	margin-left: .5rem;
+}
+
+.mgmtOptionsContainer {
+	flex-grow: 1;
+	font-size: 1.5rem;
+}
+
+.activeOptions {
+	height: 3.5rem;
+}
+
+.activeOptions p {
+	font-size: 1rem;
+}
+
+.inactiveOptions {
+	
+}
+
+.inactiveOptions p {
+	font-size: 1rem;
+}
+
+.mgmtControls {
+	height: 3.5rem;
+	background-color: steelblue;
+	transition: height 0.75s;
+}
+
+.mgmtControls:hover {
+	height: 10rem;
+}
+
+.spinUpBtn {
+
+}
+
+
+
+.collectionContainer {
 	flex-grow: 1;
 	background-color: blue;
 }

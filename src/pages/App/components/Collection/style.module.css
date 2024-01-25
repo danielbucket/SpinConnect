@@ -1,16 +1,19 @@
-.SpinCollect-collection-container {
-	flex-grow: 1;
+.collectionContainer {
 	display: flex;
 	flex-direction: column;
-	border: 0.1rem solid black;
+	border: 0.1rem solid red;
 }
 
-.collection-navigation {
+.collectionNavigation {
 	min-height: 5rem;
 	background-color: #666666;
 }
 
-.spinCollect-spin-card-container {
+.fetchCollectionBtn {
+
+}
+
+.spinCardContainer {
 	flex-grow: 1;
 	display: grid;
 	grid-template-columns: repeat(4, auto);
@@ -19,7 +22,7 @@
 	padding-top: 0.5rem;
 }
 
-.spin-card {
+.spinCardContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,16 +36,16 @@
   padding-top: .5rem;
 }
 
-.no-data-found {
+.noDataFound {
 
 }
 
-.spin-card:hover {
+.spinCard:hover {
 	transform: scale(1.025);
 	background-color: #c4c4c4;
 }
 
-.card-info {
+.spinCardInfo {
 	border: 0.10rem solid black;
 	border-radius: 0.25rem;
 	height: 10rem;
@@ -56,29 +59,22 @@
 	text-align: center;
 }
 
-.spin-card-album-name {
+.spinCardAlbumName {
 
 }
 
-.spin-card-album-title {
+.spinCardAlbumTitle {
 	display: flex;
 	align-items: center;
   justify-content: center;
   margin: auto;
 }
 
-.spin-card-album-img {
+.spinCardAlbumImg {
 	width: 90%;
 	border-radius: .5rem;
 }
 
-.album-genres {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
+.spinCardYear {
 
-}
-
-.album-genres > div {
-/*	flex-grow: 1;*/
 }
