@@ -1,23 +1,36 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Routes, Route } from 'react-router-dom'
 import style from './style.module.css'
 import { IsLoggedIn } from './headerHelpers'
+import { Login } from '../../../LoginPortal'
 
-export default function Header(props) {
-	const { loginStatus, loginPackage, logOutPackage } = props
+const discogsUser = {
+	USER_NAME: process.env.DISCOGS_USER,
+	USER_TOKEN: process.env.DISCOGS_TOKEN,
+	KEY: process.env.DISCOGS_CONSUMER_KEY,
+	SECRET: process.env.CONSUMER_SECRET,
+	loggedIn: true,
+}
+
+
+export default function Header({loginStatus, loginPackage}) {
 	const { userName } = loginPackage
 
 
 	return (
 		<div className={style.headerContainer}>
 			<div className={style.headerTitle}>SpinConnect</div>
-			<div className={style.loginStatusContainer}>
-				{
-					!loginStatus
-						? (<Link to={'/login'}></Link>)
-						: <IsLoggedIn userName={userName} logOutPackage={logOutPackage} />
-				}
-			</div>
+
+			<nav className={style.loginStatusContainer}>
+
+					{
+						!loginStatus
+							? (<Link to={'/login'}>Log In</Link>)
+							: (<IsLoggedIn userName={userName} />)
+					}
+
+			</nav>
+
 		</div>
 	)
 }

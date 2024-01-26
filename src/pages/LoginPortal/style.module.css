@@ -1,0 +1,47 @@
+.loginContainer {
+  width: 90vw;
+  border: 1px solid black;
+  margin: 16rem auto;
+  background: honeydew;
+}
+
+.titleContainer {
+	padding-top: 2rem;
+}
+
+.titleContainer p {
+	font-family: Audiowide;
+	font-size: 4rem;
+	text-align: center;
+}
+
+.inputContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3rem 0;
+}
+
+.inputWrapper {
+	display: flex;
+	flex-direction: column;
+	height: 10rem;
+}
+
+.inputBox {
+	width: 30rem;
+	height: 5rem;
+	margin: 1rem auto;
+}
+
+.inputButton {
+	width: 18rem;
+	height: 4rem;
+
+}
+
+.errorLabel {
+	color: red;
+	align-self: start;
+	padding-left: 2rem;
+}

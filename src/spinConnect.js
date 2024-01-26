@@ -11,13 +11,14 @@ import ErrorPage from './pages/error-page.js'
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <App />,
+		// element: <App />,
+		element: <LoginPortal />,
 		errorElement: <ErrorPage />,
 	},
-	{
-		path: '/login',
-		element: <LoginPortal />,
-	},
+	// {
+	// 	path: '/login',
+	// 	element: <LoginPortal />,
+	// },
 ])
 
 const domNode = document.getElementById('spinConnectRoot')

@@ -17,10 +17,17 @@
 }
 
 .loginStatusContainer {
+	display: flex;
+	justify-content: center;
   width: 12rem;
-  border-left: .16rem solid black;
-  border-bottom: .16rem solid black;
+  background-color: #949292;
   font-family: Orbitron;
+}
+
+.loginStatusContainer a {
+	text-decoration: none;
+	font-size: 2rem;
+	margin: auto;
 }
 
 .isLoggedInContainer {

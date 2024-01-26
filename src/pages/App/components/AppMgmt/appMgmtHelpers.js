@@ -1,5 +1,5 @@
 async function getDiscogs(userPackage) {
-	const { USER_NAME, USER_TOKEN } = userPackage
+	const { USER_NAME, USER_TOKEN, KEY, SECRET } = userPackage
 	const GET_discogsURL = `https://api.discogs.com/users/${USER_NAME}/collection/folders/0/releases?token=${USER_TOKEN}&per_page=100&sort=artist`
 
 	return fetch(GET_discogsURL, {
@@ -26,11 +26,12 @@ async function getDiscogs(userPackage) {
 	})
 }
 
-export const fetchCollection = userPackagege => {
+export const fetchCollection = (userPackage) => {
+	const { loggedIn } = userPackage
+
 	if (!loggedIn) {
 		throw new Error('You are not logged in.')
 	} else {
-		getDiscogs(userPackage)
-		.then(cardDataArr => setDiscogsCollection(cardDataArr))
+		return getDiscogs(userPackage)
 	}
 }

@@ -7,26 +7,16 @@ import { fetchCollection } from './appMgmtHelpers'
 
 export default function AppMgmt(props) {
 	const [mediaSourceData, setMediaSourceData] = useState({})
+	const [discogsCollection, setDiscogsCollection] = useState([])
+
 	const { userPackage } = props
 
-	const handleClick = mediaSource => {
-		const { sourceApi } = mediaSource
-
-		fetchCollection(sourceApi)
+	const handleClick = () => {
+		fetchCollection(userPackage)
 		.then(data => {
-			const newState = Object.assign({}, mediaSourceData, data)
-			setMediaSourceData(newState)
+			setDiscogsCollection()
 		})
-	}
-
-	const mediaSourceBtns = (sources) => {
-		return (
-			<button
-				className='fetch-collection-btn'
-				onClick={(i) => handleClick(i)}>
-				Spin up {i.mediaName}
-			</button>
-		)
+		console.log('data: ', discogsCollection)
 	}
 
 	return (
@@ -50,7 +40,9 @@ export default function AppMgmt(props) {
 						<p>Controls</p>
 						<div className={style.mgmtOptionsContainer}>
 							<div className={style.activeOptions}>
-								<button className={style.spinUpBtn}>Spin Up Collection</button>
+								<button
+									className={style.spinUpBtn}
+									onClick={() => handleClick()} >Spin Up Collection</button>
 							</div>
 							<div className={style.inactiveOptions}>
 								<p>Search options</p>
