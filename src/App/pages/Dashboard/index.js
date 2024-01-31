@@ -3,10 +3,9 @@ import { Link, Routes, Route } from 'react-router-dom'
 import style from './style.module.css'
 import { IsLoggedIn } from './headerHelpers'
 
+export default function Dashboard({ loginStatus, setLoginStatus, userPackage, setUserPackage }) {
+	const { USER_NAME } = userPackage || ''
 
-
-export default function Dashboard({ loginStatus,userPackage }) {
-	const { USER_NAME } = userPackage
 
 	return (
 		<div className={style.headerContainer}>
@@ -14,8 +13,11 @@ export default function Dashboard({ loginStatus,userPackage }) {
 			<nav className={style.loginStatusContainer}>
 					{
 						!loginStatus
-							? (<Link to={'/login'} replace>Log In</Link>)
-							: (<IsLoggedIn userName={USER_NAME}/>)
+							? (<Link to={'/login'} >Log In</Link>)
+							: (<IsLoggedIn
+									userName={USER_NAME}
+									setLoginStatus={setLoginStatus}
+									setUserPackage={setUserPackage} />)
 					}
 			</nav>
 		</div>

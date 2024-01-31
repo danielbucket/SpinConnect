@@ -3,15 +3,26 @@ import { useNavigate } from 'react-router-dom'
 import style from './style.module.css'
 const loginUserURL = process.env.SPNCON_USERLOGIN
 
-export default function LoginPortal({ setLoginStatus }) {
+export default function LoginPortal({ setLoginStatus, setUserPackage }) {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [emailError, setEmailError] = useState('')
 	const [passwordError, setPasswordError] = useState('')
 	const navigate = useNavigate()
 
-	const onButtonClick = () => {
+	const fetchUserData = () => {
+		const discogsUser = {
+			discogs: {
+				USER_NAME: process.env.DISCOGS_USER,
+				USER_TOKEN: process.env.DISCOGS_TOKEN,
+			}
+		}
 
+		//on succuessful validation of user login
+		return Object.assign({}, discogsUser, { loggedIn:true } )
+	}
+
+	const onButtonClick = () => {
 		setEmailError('')
 		setPasswordError('')
 
@@ -35,7 +46,12 @@ export default function LoginPortal({ setLoginStatus }) {
 			
 		// })
 
-		setLoginStatus(() => true)
+		const data = fetchUserData()
+		console.log(data)
+
+		setLoginStatus(() => data.loggedIn)
+		setUserPackage(() => data.discogs)
+		
 		navigate('/management')
 	}
 

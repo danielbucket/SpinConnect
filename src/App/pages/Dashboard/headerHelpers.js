@@ -1,19 +1,20 @@
 import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export function IsLoggedIn(props) {
-	const { userName, logOutPackage } = props
+export function IsLoggedIn({ userName, setLoginStatus, setUserPackage }) {
+	const navigate = useNavigate()
 
 	const handleClick = () => {
-		// logOutPackage.setLoginStatus(false)
-		// logOutPackage.setUserPackage(null)
+		setLoginStatus((val) => !val)
+		setUserPackage(() => {})
+		navigate('/')
 	}
 
 	return (
 		<div className='is-logged-in-container'>
-			<div className='active-user-name'>{userName || 'McPoopy Pants'}</div>
-			<p>You are currently logged in.
-				<span onClick={handleClick()}>Log out?</span>
-			</p>
+			<p className='active-user-name'>{userName}</p>
+			<p>You are currently logged in.</p>
+			<div onClick={handleClick}>Log out?</div>
 		</div>
 	)
 }
