@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { useState } from 'react'
 import style from './style.module.css'
-import { getDiscogs } from '../../../utils/discogsHelpers'
+import { getDiscogs } from '../../utils/discogsHelpers'
 import { spinCard } from './collectionHelpers'
 
-export default function Collection(props) {
+export default function CollectionLayout(props) {
 	const { userPackage, media } = props
 
 	return (

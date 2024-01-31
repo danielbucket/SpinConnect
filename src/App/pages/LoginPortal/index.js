@@ -3,38 +3,43 @@ import { useNavigate } from 'react-router-dom'
 import style from './style.module.css'
 const loginUserURL = process.env.SPNCON_USERLOGIN
 
-export default function Login(props) {
+export default function LoginPortal({ setLoginStatus }) {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [emailError, setEmailError] = useState('')
 	const [passwordError, setPasswordError] = useState('')
-
 	const navigate = useNavigate()
 
 	const onButtonClick = () => {
+
 		setEmailError('')
 		setPasswordError('')
 
-		if ("" === email) {
-			setEmailError("Please enter your email")
-			return
-		}
+		// if ("" === email) {
+		// 	setEmailError("Please enter your email")
+		// 	return
+		// }
 
-		if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-			setEmailError("Please enter a valid email")
-			return
-		}
+		// if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+		// 	setEmailError("Please enter a valid email")
+		// 	return
+		// }
 
-		if (password.length < 7) {
-			setPasswordError("The password must be 8 characters or longer")
-			return
-		}
+		// if (password.length < 7) {
+		// 	setPasswordError("The password must be 8 characters or longer")
+		// 	return
+		// }
 
 		// fetch(loginUserURL, {
 		// 	"method": "POST",
 			
 		// })
+
+		setLoginStatus(() => true)
+		navigate('/management')
 	}
+
+
 
 	return (
 		<div className={style.loginContainer}>

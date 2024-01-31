@@ -1,5 +1,5 @@
 .headerContainer {
-	grid-row: Header;
+	grid-row: Dashboard;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

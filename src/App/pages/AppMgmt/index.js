@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import style from './style.module.css'
 
-import Collection from '../Collection'
+import CollectionLayout from '../CollectionLayout'
 import { fetchCollection } from './appMgmtHelpers'
 
 export default function AppMgmt(props) {
@@ -52,7 +52,7 @@ export default function AppMgmt(props) {
 				</div>
 			</div>
 			<div className={style.collectionContainer}>
-				<Collection
+				<CollectionLayout
 					userPackage={userPackage}
 					media={mediaSourceData} />	
 			</div>

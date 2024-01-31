@@ -9,26 +9,26 @@ const spinnConnectUserPassword = 'password123'
 const loginUser = (req,res) => {
 	const tokenHeaderKey = 'jwt-token'
 	const authToken = res.headers[tokenHeaderKey]
-	try {
-		const verified = jwt.verify(authToken, jwtSecretKey)
-		if (verified) {
-			return res.status(200).json({
-				status: "logged in", message: "success"
-			})
-		} else {
-			return res.status(401).json({
-				status: "invalid auth", message: "error"
-			})
-		} catch (error) {
-			return res.status(401).json({
-				status: "invalid auth", message: "error"
-			})
-		}
-	}
+	// try {
+	// 	const verified = jwt.verify(authToken, jwtSecretKey)
+	// 	if (verified) {
+	// 		return res.status(200).json({
+	// 			status: "logged in", message: "success"
+	// 		})
+	// 	} else {
+	// 		return res.status(401).json({
+	// 			status: "invalid auth", message: "error"
+	// 		})
+	// 	} catch (error) {
+	// 		return res.status(401).json({
+	// 			status: "invalid auth", message: "error"
+	// 		})
+	// 	}
+	// }
 }
 
 const AuthUser_POST = (req,res) => {
-	const { email, password } req.body
+	// const { email, password } req.body
 	// serach for user in database...
 	// const user = db.get('users')
 	if (user.length ===1) {
@@ -74,6 +74,5 @@ const basicResponse = (req,res,next) => {
 }
 
 module.exports = {
-	getUserMediaLoginPackage,
 	basicResponse,
 }
