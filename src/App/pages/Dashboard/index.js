@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { Link, Routes, Route } from 'react-router-dom'
 import style from './style.module.css'
-import { IsLoggedIn } from './headerHelpers'
+import { IsLoggedIn } from './dashboardHelpers'
 
 export default function Dashboard({ loginStatus, setLoginStatus, userPackage, setUserPackage }) {
-	const { USER_NAME } = userPackage || ''
-
+	const { spinConUserName } = userPackage || ''
 
 	return (
 		<div className={style.headerContainer}>
@@ -15,7 +14,7 @@ export default function Dashboard({ loginStatus, setLoginStatus, userPackage, se
 						!loginStatus
 							? (<Link to={'/login'} >Log In</Link>)
 							: (<IsLoggedIn
-									userName={USER_NAME}
+									spinConUserName={spinConUserName}
 									setLoginStatus={setLoginStatus}
 									setUserPackage={setUserPackage} />)
 					}

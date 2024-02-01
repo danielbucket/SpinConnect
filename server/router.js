@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const checkHit = () => console.log("DICK")
 
 const spinConnect_controller = require('./routes/spinConnect_controller')
 // const discogs_controller = require('./routes/discogsRouter')

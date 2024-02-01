@@ -10,13 +10,8 @@ import LoginPortal from './pages/LoginPortal'
 export default function App() {
 	const [loginStatus, setLoginStatus] = useState(false)
 	const [userPackage, setUserPackage] = useState({})
-	const [mediaSources, setMediaSources] = useState([])
-
-	// useEffect(() => {
-	// 	setMediaSources((srcs) => {
-	// 		console.log('useEffect: ', srcs)
-	// 	})
-	// }, [userPackage])
+	const [mediaSources, setMediaSources] = useState({})
+	console.log('userPackage: ', mediaSources)
 
 	return (
 		<div style={{
@@ -31,11 +26,12 @@ export default function App() {
 
 			<Routes>
 				<Route path='/' element={ <LandingPage /> }/>
-				<Route path='/management' element={<AppManagement /> }/>
+				<Route path='/management' element={ <AppManagement /> }/>
 				<Route path='/login' element={
 					<LoginPortal
 						setLoginStatus={setLoginStatus}
-						setUserPackage={setUserPackage} />
+						setUserPackage={setUserPackage}
+						setMediaSources={setMediaSources} />
 			}/>
 			</Routes>
 		</div>

@@ -1,35 +1,36 @@
-const discogsLoginPackage = {
-		USER_NAME: process.env.DISCOGS_USER,
-		USER_TOKEN: process.env.DISCOGS_TOKEN,
-	}
-
-const spinConnectUserName = 'bucketLimited'
-const spinnConnectUserPassword = 'password123'
-
-const loginUser = (req,res) => {
-	const tokenHeaderKey = 'jwt-token'
-	const authToken = res.headers[tokenHeaderKey]
-	// try {
-	// 	const verified = jwt.verify(authToken, jwtSecretKey)
-	// 	if (verified) {
-	// 		return res.status(200).json({
-	// 			status: "logged in", message: "success"
-	// 		})
-	// 	} else {
-	// 		return res.status(401).json({
-	// 			status: "invalid auth", message: "error"
-	// 		})
-	// 	} catch (error) {
-	// 		return res.status(401).json({
-	// 			status: "invalid auth", message: "error"
-	// 		})
-	// 	}
-	// }
+const discogsLogin = {
+	discogsUser: 'BucketLimited',
+	discogsToken: 'wcHcskCOmfrzBDupUZTrzPdlriIIqyewJGeaFxGB',
 }
+
+const spinConUser = {
+	spinConUserName: 'BoneShart',
+	firstName: 'HardShaft',
+	lastName: 'BoneSlammer',
+}
+
+
+const userLogin = (req,res,next) => {
+	const mediaSources = ['discogs']
+	const dbQuery = Object.assign(
+		{},
+		{ discogsLogin },
+		{ spinConUser },
+		{ mediaSources }	,
+		{ loggedIn:true }
+	)
+
+	res.status(201).send(dbQuery)
+
+	next()
+}
+
+
+
 
 const AuthUser_POST = (req,res) => {
 	// const { email, password } req.body
-	// serach for user in database...
+	// search for user in database...
 	// const user = db.get('users')
 	if (user.length ===1) {
 		bcrypt.compare(password, user[0].password, function(_err, result) {
@@ -68,11 +69,6 @@ const AuthUser_POST = (req,res) => {
 	}
 }
 
-
-const basicResponse = (req,res,next) => {
-	console.log("Basic Response")
-}
-
 module.exports = {
-	basicResponse,
+	userLogin,
 }

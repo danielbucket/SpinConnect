@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import style from './style.module.css'
-const loginUserURL = process.env.SPNCON_USERLOGIN
 
-export default function LoginPortal({ setLoginStatus, setUserPackage }) {
+export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSources }) {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [emailError, setEmailError] = useState('')
@@ -11,15 +10,10 @@ export default function LoginPortal({ setLoginStatus, setUserPackage }) {
 	const navigate = useNavigate()
 
 	const fetchUserData = () => {
-		const discogsUser = {
-			discogs: {
-				USER_NAME: process.env.DISCOGS_USER,
-				USER_TOKEN: process.env.DISCOGS_TOKEN,
-			}
-		}
-
-		//on succuessful validation of user login
-		return Object.assign({}, discogsUser, { loggedIn:true } )
+			return fetch('api/v1/user/login_user')
+			.then(res => res.json())
+			.then(data => data)
+			.catch(err => new Error(err))
 	}
 
 	const onButtonClick = () => {
@@ -46,12 +40,22 @@ export default function LoginPortal({ setLoginStatus, setUserPackage }) {
 			
 		// })
 
-		const data = fetchUserData()
-		console.log(data)
+		fetchUserData()
+			.then(data => {
+				if (!data) {
+					new Error()
+					return
+				} else {
+					const { mediaSources, spinConUser, loggedIn } = data
 
-		setLoginStatus(() => data.loggedIn)
-		setUserPackage(() => data.discogs)
-		
+					setMediaSources((val) => data.mediaSources)
+					setUserPackage((val) => data.spinConUser)
+					setLoginStatus((val) => data.loggedIn)
+					return
+				}
+			})
+			.catch(err => new Error(err))
+
 		navigate('/management')
 	}
 
