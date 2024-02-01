@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
+import style from './style/isLoggedIn.module.css'
 
 export function IsLoggedIn({ spinConUserName, setLoginStatus, setUserPackage }) {
 	const navigate = useNavigate()
@@ -7,15 +8,18 @@ export function IsLoggedIn({ spinConUserName, setLoginStatus, setUserPackage }) 
 	const handleClick = () => {
 		setLoginStatus(() => false)
 		setUserPackage(() => {})
-		
 		navigate('/')
 	}
 
 	return (
-		<div className='is-logged-in-container'>
-			<p className='active-user-name'>{spinConUserName}</p>
-			<p>You are currently logged in.</p>
-			<div onClick={handleClick}>Log out?</div>
+		<div className={style.container}>
+
+			<p className={style.userName}>Welcome, <span>{spinConUserName}</span></p>
+			<input
+				className={style.inputButton} 
+				type='button' 
+				onClick={handleClick}
+				value={'Log Out'} />
 		</div>
 	)
 }

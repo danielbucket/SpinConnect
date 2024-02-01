@@ -12,7 +12,18 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 	const fetchUserData = () => {
 			return fetch('api/v1/user/login_user')
 			.then(res => res.json())
-			.then(data => data)
+			.then(data => {
+				if (!data) {
+					throw new Error()
+					return
+				} else {
+					const { mediaSources, spinConUser, loggedIn } = data
+
+					setMediaSources((val) => data.mediaSources)
+					setUserPackage((val) => data.spinConUser)
+					setLoginStatus((val) => data.loggedIn)
+				}
+			})
 			.catch(err => new Error(err))
 	}
 
@@ -41,21 +52,6 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 		// })
 
 		fetchUserData()
-			.then(data => {
-				if (!data) {
-					new Error()
-					return
-				} else {
-					const { mediaSources, spinConUser, loggedIn } = data
-
-					setMediaSources((val) => data.mediaSources)
-					setUserPackage((val) => data.spinConUser)
-					setLoginStatus((val) => data.loggedIn)
-					return
-				}
-			})
-			.catch(err => new Error(err))
-
 		navigate('/management')
 	}
 
