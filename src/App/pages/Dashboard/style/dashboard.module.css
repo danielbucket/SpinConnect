@@ -8,30 +8,46 @@
 }
 
 .statusContainer {
+	flex-grow: 1;
+	background-color: bisque;
 	display: flex;
 	flex-direction: column;
 }
 
 .headerTitle {
-	flex-grow: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-family: Audiowide;
-	font-size: 2.5rem;
+	font-size: 3rem;
+	height: 6rem;
 }
 
 .sourcesContainer {
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
+	font-family: Laila_reg;
+	text-align: center;
+}
+
+.sourcesContainer p {
+	font-size: 1.5rem;
 }
 
 .sourcesAvailable {
 	flex-wrap: nowrap;
 }
 
+.sourceCard {
+
+}
+
 .mediaSources {
 	flex-grow: 1;
+	display: flex;
+  justify-content: space-evenly;
+  font-size: 1.25rem;
 }
 
 .loginStatusContainer {

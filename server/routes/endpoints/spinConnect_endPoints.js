@@ -1,27 +1,14 @@
-const discogsLogin = {
-	discogsUser: 'BucketLimited',
-	discogsToken: 'wcHcskCOmfrzBDupUZTrzPdlriIIqyewJGeaFxGB',
-}
-
-const spinConUser = {
-	spinConUserName: 'BoneShart',
-	firstName: 'HardShaft',
-	lastName: 'BoneSlammer',
-}
-
+const loggedInUserData = require('./stubs/userLogin_stub')
 
 const userLogin = (req,res,next) => {
-	const mediaSources = ['discogs']
+
 	const dbQuery = Object.assign(
 		{},
-		{ discogsLogin },
-		{ spinConUser },
-		{ mediaSources }	,
+		loggedInUserData,
 		{ loggedIn:true }
 	)
 
 	res.status(201).send(dbQuery)
-
 	next()
 }
 

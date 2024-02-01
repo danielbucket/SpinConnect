@@ -10,7 +10,7 @@ import LoginPortal from './pages/LoginPortal'
 export default function App() {
 	const [loginStatus, setLoginStatus] = useState(false)
 	const [userPackage, setUserPackage] = useState({})
-	const [mediaSources, setMediaSources] = useState([])
+	const [mediaSources, setMediaSources] = useState({})
 
 	return (
 		<div style={{
