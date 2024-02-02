@@ -22,17 +22,21 @@ export default function App() {
 				setLoginStatus={setLoginStatus}
 				userPackage={userPackage}
 				setUserPackage={setUserPackage}
-				mediaSources={mediaSources} />
+				mediaSources={mediaSources}
+				setMediaSources={setMediaSources} />
 
 			<Routes>
 				<Route path='/' element={ <LandingPage /> }/>
-				<Route path='/management' element={ <AppManagement /> }/>
+				<Route path='/management' element={
+					<AppManagement
+						mediaSources={mediaSources} />
+				}/>
 				<Route path='/login' element={
 					<LoginPortal
 						setLoginStatus={setLoginStatus}
 						setUserPackage={setUserPackage}
 						setMediaSources={setMediaSources} />
-			}/>
+				}/>
 			</Routes>
 		</div>
 	)

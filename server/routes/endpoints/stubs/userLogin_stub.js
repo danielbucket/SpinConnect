@@ -1,6 +1,8 @@
 const discogsLogin = {
 	discogsUser: 'BucketLimited',
 	discogsToken: 'wcHcskCOmfrzBDupUZTrzPdlriIIqyewJGeaFxGB',
+	secret: 'bGlhjSVQxSYLYDyGyFUVuRXRhVpYHxcR',
+	key: 'zDaXPdXxIkNJXVhWhThw',
 }
 
 const spinConUser = {

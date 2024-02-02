@@ -2,22 +2,36 @@ import * as React from 'react'
 import { useState } from 'react'
 import style from './style.module.css'
 
-import CollectionLayout from '../CollectionLayout'
+import { CollectionLayout } from '../CollectionLayout'
 import { fetchCollection } from './appMgmtHelpers'
 
-export default function AppMgmt(props) {
+export default function AppMgmt({ mediaSources }) {
 	const [mediaSourceData, setMediaSourceData] = useState({})
-	const [discogsCollection, setDiscogsCollection] = useState([])
+	const [collection, setCollection] = useState({})
 
-	const { userPackage } = props
-
-	const handleClick = () => {
-		fetchCollection(userPackage)
+	const handleClick = (src, name) => {
+		fetchCollection(src, name)
 		.then(data => {
-			setDiscogsCollection()
+			setCollection((state) => Object.assign({}, state, { [name]:data }))
 		})
-		console.log('data: ', discogsCollection)
+		.catch(err => {
+			throw new Error(err)
+		})
 	}
+
+	const sourcesButtons = Object.keys(mediaSources).map((i,val) => {
+		const { name, url } = mediaSources[i]
+
+		return (
+			<input
+				key={val}
+				type='button'
+				value={name}
+				className={style.spinUpBtn}
+				onClick={() => handleClick(mediaSources[i].login, name)}
+			/>
+		)
+	})
 
 	return (
 		<div className={style.appMgmtContainer}>
@@ -40,9 +54,7 @@ export default function AppMgmt(props) {
 						<p>Controls</p>
 						<div className={style.mgmtOptionsContainer}>
 							<div className={style.activeOptions}>
-								<button
-									className={style.spinUpBtn}
-									onClick={() => handleClick()} >Spin Up Collection</button>
+								{sourcesButtons}
 							</div>
 							<div className={style.inactiveOptions}>
 								<p>Search options</p>
@@ -51,10 +63,8 @@ export default function AppMgmt(props) {
 					</div>
 				</div>
 			</div>
-			<div className={style.collectionContainer}>
-				<CollectionLayout
-					userPackage={userPackage}
-					media={mediaSourceData} />	
+			<div className={style.collectionsLayout}>
+				<CollectionLayout collection={collection} />
 			</div>
 		</div>
 	)

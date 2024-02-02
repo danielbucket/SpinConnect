@@ -1,10 +1,10 @@
 async function getDiscogs(userPackage) {
-	const { USER_NAME, USER_TOKEN, KEY, SECRET } = userPackage
-	const GET_discogsURL = `https://api.discogs.com/users/${USER_NAME}/collection/folders/0/releases?token=${USER_TOKEN}&per_page=100&sort=artist`
+	const { discogsUser, discogsToken, key, secret } = userPackage
+	const GET_discogsURL = `https://api.discogs.com/users/${discogsUser}/collection/folders/0/releases?token=${discogsToken}&per_page=100&sort=artist`
 
 	return fetch(GET_discogsURL, {
 		'method': 'GET',
-		'Authorization': `Discogs key=[${KEY}], secret:[${SECRET}]`
+		'Authorization': `Discogs key=[${key}], secret:[${secret}]`
 	}).then(res => {
 		if (!res.ok) {
 			throw new Error('Network response was not OK')
@@ -26,12 +26,15 @@ async function getDiscogs(userPackage) {
 	})
 }
 
-export const fetchCollection = (userPackage) => {
-	const { loggedIn } = userPackage
+async function getPodbean(userPackage) {
 
-	if (!loggedIn) {
-		throw new Error('You are not logged in.')
-	} else {
-		return getDiscogs(userPackage)
-	}
+}
+
+const fetchFuncs = {
+	discogs: getDiscogs,
+	podbean: getPodbean,
+}
+
+export const fetchCollection = (sources, name) => {
+	return fetchFuncs[name](sources)
 }

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import style from './style.module.css'
+import style from './styles/card.module.css'
 
 export const spinCard = card => {
 	const { id, cover_image, title, year, } = card
@@ -12,17 +12,15 @@ export const spinCard = card => {
 	return (
 		<div
 			key={card.id}
-			className={style.spinCardContainer}
-			onClick={(i) => openCard(i)}
-			>
+			className={style.container}
+			onClick={(i) => openCard(i)} >
 			<img
-				className={style.spinCardAlbumImg}
 				src={card.cover_image}
 				alt='card image' />
-			<div className={style.spinCardInfo}>
-				<div className={style.spinCardAlbumName}>{name}</div>
-				<div className={style.spinCardAlbumTitle}>{title}</div>
-				<div className={style.spinCardYear}>{year}</div>
+			<div className={style.info}>
+				<div className={style.name}>{name}</div>
+				<div className={style.title}>{title}</div>
+				<div className={style.year}>{year}</div>
 			</div>
 		</div>
 	)
