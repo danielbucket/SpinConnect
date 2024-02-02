@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, Routes, Route } from 'react-router-dom'
 import style from './style/dashboard.module.css'
-import { IsLoggedIn } from './dashboardHelpers'
+import IsLoggedIn from './isLoggedIn'
 
-export default function Dashboard({ loginStatus, setLoginStatus, userPackage, setUserPackage, mediaSources }) {
+export default function Dashboard(props) {
+	const {
+		loginStatus,
+		setLoginStatus,
+		userPackage,
+		setUserPackage,
+		mediaSources = {},
+		setMediaSources } = props
 	const { spinConUserName } = userPackage || ''
 
 	const srcsElems = Object.keys(mediaSources).map((i,val) => {
@@ -23,8 +30,14 @@ export default function Dashboard({ loginStatus, setLoginStatus, userPackage, se
 			<div className={style.statusContainer}>
 				<div className={style.headerTitle}>SpinConnect</div>
 				<div className={style.sourcesContainer}>
-					<p className={style.sourcesAvailable}>Available Media Sources: </p>
-					<div className={style.mediaSources}>{srcsElems}</div>
+					{
+						srcsElems.length >= 1 ? (
+						<>
+							<p className={style.sourcesAvailable}>Available Media Sources: </p>
+							<div className={style.mediaSources}>{srcsElems}</div>
+						</>
+						) : <></>
+					}
 				</div>
 			</div>
 
@@ -35,7 +48,8 @@ export default function Dashboard({ loginStatus, setLoginStatus, userPackage, se
 							: (<IsLoggedIn
 									spinConUserName={spinConUserName}
 									setLoginStatus={setLoginStatus}
-									setUserPackage={setUserPackage} />)
+									setUserPackage={setUserPackage}
+									setMediaSources={setMediaSources} />)
 					}
 			</nav>
 		</div>

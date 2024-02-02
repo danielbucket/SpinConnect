@@ -2,12 +2,13 @@ import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import style from './style/isLoggedIn.module.css'
 
-export function IsLoggedIn({ spinConUserName, setLoginStatus, setUserPackage }) {
+export default function IsLoggedIn({ spinConUserName, setLoginStatus, setUserPackage, setMediaSources }) {
 	const navigate = useNavigate()
 
 	const handleClick = () => {
 		setLoginStatus(() => false)
 		setUserPackage(() => {})
+		setMediaSources(() => {})
 		navigate('/')
 	}
 
