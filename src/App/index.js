@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 
 import Dashboard from './pages/Dashboard'
 import AppManagement from './pages/AppMgmt'
 import LandingPage from './pages/LandingPage'
 import LoginPortal from './pages/LoginPortal'
+import AlbumControl from './pages/AlbumControl'
 
 export default function App() {
 	const [loginStatus, setLoginStatus] = useState(false)
@@ -27,10 +28,7 @@ export default function App() {
 
 			<Routes>
 				<Route path='/' element={ <LandingPage /> }/>
-				<Route path='/management' element={
-					<AppManagement
-						mediaSources={mediaSources} />
-				}/>
+				<Route path='/app_mgmt/*' element={<AppManagement mediaSources={mediaSources} />} />
 				<Route path='/login' element={
 					<LoginPortal
 						setLoginStatus={setLoginStatus}

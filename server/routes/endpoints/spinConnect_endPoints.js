@@ -1,11 +1,10 @@
 const loggedInUserData = require('./stubs/userLogin_stub')
 
 const userLogin = (req,res,next) => {
-
 	const dbQuery = Object.assign(
 		{},
 		loggedInUserData,
-		{ loggedIn:true }
+		{ loggedIn:true },
 	)
 
 	res.status(201).send(dbQuery)

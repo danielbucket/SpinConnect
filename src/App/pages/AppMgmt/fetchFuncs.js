@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 async function getDiscogs(userPackage) {
 	const { discogsUser, discogsToken, key, secret } = userPackage
 	const GET_discogsURL = `https://api.discogs.com/users/${discogsUser}/collection/folders/0/releases?token=${discogsToken}&per_page=100&sort=artist`
@@ -12,13 +14,13 @@ async function getDiscogs(userPackage) {
 		return res.json()
 	}).then((data) => {
 		const { releases } = data
-
 		return releases.map(i => {
 			const { basic_information } = i
 			const parentValues = {
 				date_added: i.date_added,
 				rating: i.rating,
-				notes: i.notes || '',	
+				notes: i.notes || '',
+				id: uuidv4()
 			}
 
 			return Object.assign(parentValues, basic_information)
