@@ -1,0 +1,11 @@
+.appMgmtContainer {
+	grid-row: AppMgmt;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--ac-green);
+	font-family: Orbitron;
+}
+
+.spinUpBtn {
+
+}

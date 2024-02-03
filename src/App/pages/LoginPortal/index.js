@@ -52,7 +52,7 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 		// })
 
 		fetchUserData()
-		navigate('/management')
+		navigate('/app_mgmt')
 	}
 
 

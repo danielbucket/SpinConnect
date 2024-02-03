@@ -1,17 +1,10 @@
-.appMgmtContainer {
-	grid-row: AppMgmt;
-	display: flex;
-	flex-direction: column;
-	background-color: var(--ac-green);
-	font-family: Orbitron;
-}
-
 .mgmtOperationsContainer {
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	font-size: 2.5rem;
 	max-height: 13.5rem;
-	background-color: slategray;
+	background-color: var(--ac-green);
 }
 
 .appMgmt {
@@ -71,13 +64,4 @@
 
 .mgmtControls:hover {
 	height: 10rem;
-}
-
-.spinUpBtn {
-
-}
-
-.collectionContainer {
-	flex-grow: 1;
-	background-color: var(--ac-green);
 }
