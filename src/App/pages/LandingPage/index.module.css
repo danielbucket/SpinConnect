@@ -1,6 +1,9 @@
-.container {
+.landingPageWrapper {
+  display: flex;
+  flex-direction: column;
 	background-color: var(--ac-green);
 	font-family: Laila_reg;
+	height: calc(100vh - 8rem);
 }
 
 .welcome {

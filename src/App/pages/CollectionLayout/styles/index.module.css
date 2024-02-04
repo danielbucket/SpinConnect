@@ -1,18 +1,18 @@
-.wrapper {
+.collectionLayoutWrapper {
 	display: flex;
 	flex-direction: column;
 }
 
-.container {
+.cardsWrapper {
 	min-height: 5rem;
 	background-color: #666666;
 }
 
-.container p {
+.cardsWrapper p {
 
 }
 
-.cardsWrapper {
+.cardsContainer {
 	display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

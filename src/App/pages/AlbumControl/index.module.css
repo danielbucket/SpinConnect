@@ -1,8 +1,27 @@
-.parentContainer {
-	font-size: 5rem;
+.controlsWrapper {
+	display: flex;
+	flex-direction: column;
+/*	align-items: center;*/
+	min-height: calc(100vh - 8rem);
+}
+
+.discogsAlbumWrapper {
+
+}
+
+.albumCardContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.albumCardContainer img {
+	width: 80%;
 }
 
 .backBtn {
+	font-size: 2rem;
+	border: .1rem solid var(--ac-brown);
 	width: 10rem;
 	height: 5rem;
 }

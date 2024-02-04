@@ -26,7 +26,6 @@ export default function AppMgmt({ mediaSources }) {
 
 	const srcBtns = Object.keys(mediaSources).map((i,val) => {
 		const { name, url } = mediaSources[i]
-		// const { login } = mediaSources[i]
 
 		return (
 			<input
@@ -40,12 +39,12 @@ export default function AppMgmt({ mediaSources }) {
 	})
 
 	return (
-		<div className={style.appMgmtContainer}>
+		<div className={style.appMgmtWrapper}>
 			<ManagementTools srcBtns={srcBtns} />
 
 			<Routes>
 				<Route path='collection' element={<CollectionLayout vinylCollection={vinylCollection} />} />
-				<Route path=':id' element={<AlbumControl />} />
+				<Route replace path=':id' element={<AlbumControl />} />
 			</Routes>
 
 		</div>

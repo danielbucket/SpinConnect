@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, Routes, Route } from 'react-router-dom'
-import style from './style/dashboard.module.css'
+import style from './style/index.module.css'
 import IsLoggedIn from './isLoggedIn'
 
 export default function Dashboard(props) {
@@ -26,7 +26,8 @@ export default function Dashboard(props) {
 	})
 
 	return (
-		<div className={style.dashboardContainer}>
+		<div className={style.dashboardWrapper}>
+		
 			<div className={style.statusContainer}>
 				<div className={style.headerTitle}>SpinConnect</div>
 				<div className={style.sourcesContainer}>

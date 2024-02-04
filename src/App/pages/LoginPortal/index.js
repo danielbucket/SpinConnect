@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import style from './style.module.css'
+import closeWindowIcon from '../../../assets/icons/close-window.png'
 
 export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSources }) {
 	const [email, setEmail] = useState('')
@@ -58,11 +59,22 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 
 
 	return (
-		<div className={style.loginContainer}>
+		<div className={style.loginWrapper}>
+
 			<div className={style.titleContainer}>
-				<p>SpinConnect</p>
-				<p>Login</p>
+				<div
+					className={style.closeLoginWindow}
+					onClick={() => navigate(-1)} >
+					<img 
+						src={closeWindowIcon}
+						alt='close window icon' />
+				</div>
+				<div className={style.title}>
+					<p>SpinConnect</p>
+					<p>Login</p>
+				</div>
 			</div>
+
 			<div className={style.inputContainer}>
 				<div className={style.inputWrapper}>
 					<input
@@ -72,6 +84,7 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 						className={style.inputBox} />
 					<label className={style.errorLabel}>{emailError}</label>
 				</div>
+
 				<div className={style.inputWrapper}>
 					<input 
 						value={password}
@@ -80,6 +93,7 @@ export default function LoginPortal({ setLoginStatus, setUserPackage, setMediaSo
 						className={style.inputBox} />
 					<label className={style.errorLabel}>{passwordError}</label>
 				</div>
+
 				<input
 					className={style.inputButton}
 					type='button'

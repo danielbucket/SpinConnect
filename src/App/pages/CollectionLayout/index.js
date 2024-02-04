@@ -8,9 +8,9 @@ export function CollectionLayout({ vinylCollection }) {
 	const collectionCards = Object.keys(vinylCollection).map((i,val) => (
 			<div
 				key={uuidv4()}
-				className={style.container} >
+				className={style.cardsWrapper} >
 				<p>{i}</p>
-				<div className={style.cardsWrapper}>
+				<div className={style.cardsContainer}>
 					{ vinylCollection[i].map(i => albumCard(i)) }
 				</div>
 			</div>
@@ -18,7 +18,7 @@ export function CollectionLayout({ vinylCollection }) {
 	)
 
 	return (
-		<div className={style.wrapper} >
+		<div className={style.collectionLayoutWrapper} >
 			{collectionCards}
 		</div>
 	)

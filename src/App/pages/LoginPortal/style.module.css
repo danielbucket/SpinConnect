@@ -1,19 +1,29 @@
-.loginContainer {
-  width: 90vw;
-  border: 1px solid black;
-  margin: 16rem auto;
+.loginWrapper {
+	margin: 8rem auto;
   background: honeydew;
+  display: flex;
+  flex-direction: column;
+  border: 0.25rem solid var(--ac-orange);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 .titleContainer {
 	padding-top: 2rem;
 }
 
-.titleContainer p {
+.closeLoginWindow img {
+	height: 4rem;
+	width: 4rem;
+}
+
+.title p {
 	font-family: Audiowide;
 	font-size: 4rem;
 	text-align: center;
+
 }
+
 
 .inputContainer {
 	display: flex;

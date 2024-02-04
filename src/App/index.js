@@ -15,9 +15,11 @@ export default function App() {
 
 	return (
 		<div style={{
-			"display": "grid",
-			"gridTemplateRows": "[Dashboard] 10rem [AppMgmt]	calc(100vh - 10rem)"
+			"display": "flex",
+			"flexDirection": "column",
+			"JustifyContent": "center",
 		}}>
+
 			<Dashboard
 				loginStatus={loginStatus}
 				setLoginStatus={setLoginStatus}
@@ -26,8 +28,9 @@ export default function App() {
 				mediaSources={mediaSources}
 				setMediaSources={setMediaSources} />
 
+
 			<Routes>
-				<Route path='/' element={ <LandingPage /> }/>
+				<Route path='/' element={ <LandingPage /> } />
 				<Route path='/app_mgmt/*' element={<AppManagement mediaSources={mediaSources} />} />
 				<Route path='/login' element={
 					<LoginPortal

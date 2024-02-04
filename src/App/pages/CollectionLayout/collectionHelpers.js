@@ -8,7 +8,7 @@ export const albumCard = card => {
 	const { name } = card.artists[0]
 
 	const openCard = (id) => {
-		navigate(`/app_mgmt/collection:${id}`)
+		navigate(`/app_mgmt/collection:${id}`, { state: { albumData:card } })
 	}
 
 	return (

@@ -3,7 +3,7 @@ import style from './styles/managementTools.module.css'
 
 export function ManagementTools({ srcBtns }) {
 	return (
-		<div className={style.mgmtOperationsContainer}>
+		<div className={style.mgmtToolsWrapper}>
 			<div className={style.appMgmt}>
 				<div className={style.mgmtPreview}>
 					<p>Management</p>

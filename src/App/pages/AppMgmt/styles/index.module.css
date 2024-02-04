@@ -1,5 +1,4 @@
-.appMgmtContainer {
-	grid-row: AppMgmt;
+.appMgmtWrapper {
 	display: flex;
 	flex-direction: column;
 	background-color: var(--ac-green);
