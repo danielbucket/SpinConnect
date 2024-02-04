@@ -9,7 +9,6 @@ export function CollectionLayout({ vinylCollection }) {
 			<div
 				key={uuidv4()}
 				className={style.cardsWrapper} >
-				<p>{i}</p>
 				<div className={style.cardsContainer}>
 					{ vinylCollection[i].map(i => albumCard(i)) }
 				</div>

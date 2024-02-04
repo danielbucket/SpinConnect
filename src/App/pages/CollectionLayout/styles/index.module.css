@@ -1,11 +1,13 @@
 .collectionLayoutWrapper {
 	display: flex;
 	flex-direction: column;
+	height: calc(100vh - 20rem);
 }
 
 .cardsWrapper {
 	min-height: 5rem;
 	background-color: #666666;
+	overflow-x: scroll;
 }
 
 .cardsWrapper p {

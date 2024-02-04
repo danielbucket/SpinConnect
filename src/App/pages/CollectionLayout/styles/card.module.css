@@ -1,10 +1,10 @@
 .container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
   justify-content: center;
-	height: 30rem;
-	max-width: 16rem;
+	height: 10rem;
+	width: 95vw;
 	font-size: 1.5rem;
 	background-color: var(--ac-sand);
   border-radius: 0.5rem;
@@ -19,15 +19,15 @@
 }
 
 .container img {
-	width: 90%;
+	height: 90%;
 	border-radius: .5rem;
 }
 
 .info {
 	border: 0.10rem solid black;
 	border-radius: 0.25rem;
-	height: 12rem;
-	width: 90%;
+	height: 80%;
+	width: 70%;
 	margin: auto;
 	font-size: 1.25rem;
 	display: flex;

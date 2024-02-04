@@ -18,6 +18,8 @@ export default function App() {
 			"display": "flex",
 			"flexDirection": "column",
 			"JustifyContent": "center",
+			"height": "100vh",
+			"backgroundColor": "orange",
 		}}>
 
 			<Dashboard

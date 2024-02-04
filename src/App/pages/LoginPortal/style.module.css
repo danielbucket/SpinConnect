@@ -9,7 +9,13 @@
 }
 
 .titleContainer {
-	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.closeLoginWindow {
+	display: flex;
+  justify-content: flex-end;
 }
 
 .closeLoginWindow img {
