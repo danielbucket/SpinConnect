@@ -13,16 +13,16 @@ const { publicPath } = webpackConfig.output
 const compiler = webpack(webpackConfig)
 const appRouter = require('./router')
 
+app.use(cors())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 app.use(
 	webpackDevMiddleware(compiler, {
 		publicPath,
 		index: 'spinConnectApp.html',
 	})
 )
-
-app.use(cors())
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1', appRouter)
 

@@ -43,8 +43,9 @@ module.exports = {
 	    {
 	      test: /\.css$/,
 	      use: [
-	      	devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-	      	"css-loader"
+	      	devMode
+	      		? 'style-loader', "css-loader"
+	      		: MiniCssExtractPlugin.loader, "css-loader"
       	],
 	      exclude: /node_moudles/,
 	    },

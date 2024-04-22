@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid'
+`import { v4 as uuidv4 } from 'uuid'
 
 async function getDiscogs(userPackage) {
 	const { discogsUser, discogsToken, key, secret } = userPackage
